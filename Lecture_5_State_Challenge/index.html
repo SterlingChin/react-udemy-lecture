@@ -12,6 +12,11 @@
     <div id="app"></div>
     <script type="text/babel">
       var Counter =  React.createClass({
+        getInitialState: function(){
+          return{
+            counter: 0
+          }
+        },
         addOne: function(){
           this.setState ({
             counter: this.state.counter + 1
@@ -27,15 +32,10 @@
             counter: this.state.counter + 10
           })
         },
-        getInitialState: function(){
-          return{
-            counter: 0
-          }
-        },
         render: function(){
           return (
             <div className='container'>
-                <h1>Counter: {this.state.counter}</h1>
+                <h1>Count: {this.state.counter}</h1>
               <button onClick={this.addOne} className='btn blue-btn'>Add 1</button>
               <button onClick={this.addFive} className='btn green-btn'>Add 5</button>
               <button onClick={this.addTen} className='btn purple-btn'>Add 10</button>
